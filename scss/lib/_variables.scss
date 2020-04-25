@@ -6,4 +6,17 @@ $color-white: #fff;
 
 $color-gray: #A7A9AC;
 $color-darkgray: #4D4D4D;
-$color-lightgray:lighten($color-darkgray, 50%);
+$color-lightgray:lighten($color-darkgray, 60%);
+
+/* tamaños de fuente // llamar con map-get($variable, nombre-tamaño) */
+
+$fs : (
+    big: 24px,
+    normal: 16px,
+    small: 14px,
+    x-small: 12px
+);
+
+/* Tipos de fuente */
+
+$font-fam-base: 'Lato', sans-serif;

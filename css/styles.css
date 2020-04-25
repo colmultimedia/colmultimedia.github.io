@@ -1,12 +1,14 @@
 @charset "UTF-8";
 /* Librerías */
 /* Gama de colores principales */
+/* tamaños de fuente // llamar con map-get($variable, nombre-tamaño) */
+/* Tipos de fuente */
 /* Base */
 /* Componentes */
 /* Layouts */
 body {
+  font-family: "Lato", sans-serif;
   margin: 0;
-  padding: 0;
 }
 
 .header {
@@ -22,25 +24,52 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 6px solid #cdcdcd;
+  border-bottom: 6px solid #e6e6e6;
+  z-index: 100;
 }
 
-.header__logo {
-  width: 350px;
-  height: auto;
+.header__logo figure {
+  width: 250px;
+  height: 2.4em;
+  background: url("/assets/images/logo-autopro.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .footer {
   width: 100%;
+  height: auto;
   position: absolute;
   bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background: #4D4D4D;
   color: #fff;
+  border-top: 6px solid #F58222;
+}
+
+.footer__logo figure {
+  width: 150px;
+  height: 2.4em;
+  background: url("/assets/images/logo-autopro.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.footer__powered-by a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-size: 14px;
+  margin-right: 50px;
+}
+
+.footer__copyright {
+  margin-top: 5px;
 }
 /*# sourceMappingURL=styles.css.map */

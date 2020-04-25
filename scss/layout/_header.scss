@@ -1,6 +1,6 @@
 body {
+    font-family: $font-fam-base;
     margin: 0;
-    padding: 0;
 }
 
 .header {
@@ -11,9 +11,14 @@ body {
     justify-content: center;
     align-items: center;
     border-bottom: 6px solid $color-lightgray;
+    z-index: map-get($zi , dropdown );
 
-    &__logo {
-        width: 350px;
-        height: auto;
+    &__logo figure{
+        width: 250px;
+        height: 2.4em;
+        background: url('/assets/images/logo-autopro.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
     }
 }
