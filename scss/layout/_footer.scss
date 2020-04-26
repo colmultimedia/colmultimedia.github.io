@@ -20,12 +20,14 @@
         }
     }
 
-    &__powered-by a {
-        color: $color-lightgray;
-        text-decoration: none;
-        font-size: map-get($fs, small );
-        margin-right: 50px;
-        margin-top: 10px;
+    &__powered-by {
+        margin-top: 5px;
+        & a{
+            color: $color-lightgray;
+            text-decoration: none;
+            font-size: map-get($fs, small );
+            margin-right: 50px;
+        }
 
     }
     &__copyright {

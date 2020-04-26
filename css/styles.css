@@ -6,8 +6,10 @@
 /* Base */
 /* Componentes */
 /* Layouts */
+/* Grid__container */
 body {
   font-family: "Lato", sans-serif;
+  letter-spacing: 0.1em;
   margin: 0;
 }
 
@@ -49,12 +51,14 @@ body {
   background-size: contain;
   background-position: center;
 }
+.footer__powered-by {
+  margin-top: 5px;
+}
 .footer__powered-by a {
   color: #e6e6e6;
   text-decoration: none;
   font-size: 14px;
   margin-right: 50px;
-  margin-top: 10px;
 }
 .footer__copyright {
   margin-top: 5px;
