@@ -1,17 +1,23 @@
 .footer {
-    width: 100%;
-    height: auto;
-    
-    display: flex;
-    justify-content: space-between;
-    background: $color-darkgray;
-    color: $color-white;
-    border-top: 6px solid $color-brand;
+    background:$color-darkgray;
 
+    & a {
+        color: white;
+    }
+    &__alt {
+        background-color: $color-brand-alt;
+        color: white;
+        font-size: .9em;
+    }
+
+    &__menu {
+        text-align: center;
+    }
     &__logo {
         & figure {
         width: 150px;
         height: 2.4em;
+        margin: 0;
         background: url('/assets/images/logo-autopro.png');
         background-repeat: no-repeat;
         background-size: contain;
@@ -19,17 +25,4 @@
         }
     }
 
-    &__powered-by {
-        margin-top: 5px;
-        & a{
-            color: $color-lightgray;
-            text-decoration: none;
-            font-size: map-get($fs, small );
-            margin-right: 50px;
-        }
-
-    }
-    &__copyright {
-        margin-top: 5px;
-    }
 }
