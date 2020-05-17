@@ -2,9 +2,22 @@
 
 @import "lib/variables";
 
+// Componentes
+
+@import "componentes/slideshow";
 
 /* Layouts */
 
 @import "layout/footer";
 @import "layout/header";
 @import "layout/descargas";
+
+.btn-outline-primary,
+.list-group-item.active{
+    background: $color-brand;
+    color: white;
+    border: none;
+    &:hover {
+        background: $color-darkgray;
+    }
+}
