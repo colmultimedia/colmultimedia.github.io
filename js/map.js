@@ -1,26 +1,16 @@
-var map, lat, lng;
-$(document).ready(function(){
-  //creamos el mapa
-  var map = new GMaps({
-    el: '#map',
-    lat: 0,
-    lng: 0
-  });
-  // Creamos la geolocalización
-  GMaps.geolocate({
-    success: function(position){
-      lat = position.coords.latitude;  
-      lng = position.coords.longitude;
-      //Definimos la vista del mapa sobre las coordenadas obtenidas
-      map.setCenter(lat, lng);
-      //Añadimos un marcador
-      map.addMarker({ lat: lat, lng: lng});  
-    },
-    error: function(error){
-      alert('Geolocation failed: '+error.message);
-    },
-    not_supported: function(){
-      alert("Your browser does not support geolocation");
-    }
-  });
-});
+var map;
+        var bolivar = {lat: 3.2651663, lng: -76.5375671};
+        var sanJorge = {lat: 3.2636198, lng: -76.5381822};
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: bolivar,
+            zoom: 17
+          });
+          var marker = new google.maps.Marker({position: bolivar, map: map, title: "Bolivar"});
+          var marker2 = new google.maps.Marker({position: sanJorge, map: map, title: "San Jorge"});
+          marker.setMap(map);
+          marker2.setMap(map);
+        }
+
+        
+

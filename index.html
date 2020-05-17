@@ -1,16 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- JS Files -->
+
+    <script src="/js/map.js"></script>
+    <script src="/js/validation-form.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBafLeSSnOlXAX9cPFQXqtq1onCeBTzeUI&callback=initMap"
+    async defer></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="scss/styles.css">
     <title>AUTOPRO - Centros de Servicio Jamundí - PRIMAX - MOBIL</title>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbar">
       <!-- HEADER    -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container">
@@ -19,16 +26,19 @@
             <span class="navbar-toggler-icon"></span>
             </button>
         
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Control Flota</a>
+                <a class="nav-link" href="https://zencillo.net/ZS_CO_ClienteConsolidador?Compania=900713" target="_blank">Control Flota</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pago en línea</a>
+                    <a class="nav-link" href="#">Pagos en línea</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#estaciones">Estaciones</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/descargas.html">Centro de descargas</a>
@@ -54,7 +64,7 @@
             <div class="overlay">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-md-7 offset-md-5 text-center text-md-right">
+                        <div class="d-none d-md-block col-md-7 offset-md-5 text-center text-md-right">
                             <h1>Estaciones de servicio en <strong>Jamundí</strong></h1>
                             <h3>¡Comprometidos con brindarle la medida exacta!</h3>
                         </div>
@@ -66,10 +76,10 @@
       <!-- /SLIDESHOW -->
 
       <!-- CARDS -->
-      <div class="container">
+      <div class="container" id="estaciones" data-offset="0px">
           <div class="row text-center text-uppercase mt-4">
               <div class="col">
-                <p>Encuentra tu estación más cercana</p>
+                <p>Encuentra tu estación <u>más cercana</u></p>
               </div>
           </div>
           <div class="row mt-2">
@@ -77,7 +87,16 @@
                 <div class="card pr-2">
                     <a href="https://www.google.com/maps/dir/3.2574586,-76.5603823/maps+servicentro+esso+bolivar/@3.2602229,-76.5660439,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8e309eb76bf2476d:0x7b2da55d1ecbf366!2m2!1d-76.5381822!2d3.2636198" target="_blank"><img src="/assets/images/primax-bolivar-logo.png" class="card-img-top" alt="..."></a>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item active">Cra. 10 # 14-16</li>
+                        <li class="list-group-item active"><h5>Cra. 10 # 14-16
+                            <span class="badge badge-secondary" data-toggle="tooltip" title="Código postal: 764001">Jamundí-Valle</span>
+                        </h5>
+                        </li>
+                            <li class="list-group-item">
+                                <span class="badge badge-pill badge-warning" data-toggle="tooltip" title="Gasolina Corriente y Extra, Diesel, Kerosene">Combustible</span>
+                                <span class="badge badge-pill badge-info">Serviteca</span>
+                                <span class="badge badge-pill badge-secondary">Almacén</span>
+                                <span class="badge badge-pill badge-danger">C. Mantenimiento</span>
+                        </li>
                         <li class="list-group-item">+57 (2) 553 0901</li>
                       </ul>
                     <div class="card-body">
@@ -90,7 +109,15 @@
                 <div class="card">
                     <a href="https://www.google.com/maps/dir/3.2574586,-76.5603823/maps+mobil+jamundi/@3.2624683,-76.5399836,17z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8e309eb788b6d55d:0x27b4ff1d6816630c!2m2!1d-76.537549!2d3.2652712" target="_blank"><img src="/assets/images/mobil-sanjorge-logo.png" class="card-img-top" alt="..."></a>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item active">Cra. 10 # 16-36</li>
+                        <li class="list-group-item active"><h5>Cra. 10 # 16-36
+                            <span class="badge badge-secondary" data-toggle="tooltip" title="Código postal: 764001">Jamundí-Valle</span>
+                            </h5>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="badge badge-pill badge-warning" data-toggle="tooltip" title="Gasolina Corriente y Extra, Diesel">Combustible</span>
+                            <span class="badge badge-pill badge-secondary">Almacén</span>
+                            <span class="badge badge-pill badge-success">Gas Natural</span>
+                    </li>
                         <li class="list-group-item">+57 (2) 516-6208</li>
                       </ul>
                     <div class="card-body">
@@ -100,34 +127,136 @@
                 </div>
               </div>
           </div>
-          <div class="row">
-              
-                <div class="col-md-4">
+      </div>
+
+      <!-- FIN ESTACIONES -->
+
+      <!-- CENTRO DE MANTENIMIENTO -->
+      <section class="centro-mantenimiento">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3">
                     <div class="card">
-                        <a href=""><img src="/assets/images/grid/confiable.png" class="card-img-top" alt="..."></a>
+                        <img src="/assets/images/centro-mantenimiento.jpg" class="card-img-top" alt="...">
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <a href=""><img src="/assets/images/grid/mobil.png" class="card-img-top" alt="..."></a>
-                    </div>
+                <div class="col-md-6">
+                    <h2 class="text-uppercase">Centro de Mantenimiento</h2>
+                    <p>Somos expertos, a continuación nuestro portafolio de servicios</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Alineación y Balanceo</li>
+                        <li class="list-group-item">Limpieza de Inyectores</li>
+                        <li class="list-group-item">Frenos y Suspensión</li>
+                        <li class="list-group-item">Servicio de Escáner</li>
+                        <li class="list-group-item">Mecánica en general</li>
+                      </ul>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <a href=""><img src="/assets/images/grid/shell.png" class="card-img-top" alt="..."></a>
+            </div>
+        </div>
+      </section>
+
+      <!-- /CENTRO DE SERVICIO -->
+          <section class="logos">
+            <div class="container">
+                <div class="row justify-content-center">
+                    
+                        <div class="col-md-3 pb-4">
+                            <div class="card">
+                                <img src="/assets/images/grid/combustible-confiable.png" class="card-img-top" alt="...">
+                            </div>
+                        </div>
+                        <div class="col-md-3 pb-4">
+                            <div class="card">
+                                <a href="https://www.primaxcolombia.com.co/" target="_blank"><img src="/assets/images/grid/primax.png" class="card-img-top" alt="..."></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pb-4">
+                            <div class="card">
+                                <img src="/assets/images/grid/shell.png" class="card-img-top" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-2 pb-4">
+                            <div class="card">
+                                <a href="/descargas/reporte.jpg" target="_blank"><img src="/assets/images/grid/icontec.png" class="card-img-top" alt="..."></a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 pb-4">
+                            <div class="card">
+                                <a href="https://sso.puntoscolombia.com/" target="_blank"><img src="/assets/images/grid/puntos-colombia.png" class="card-img-top" alt="..."></a>
+                            </div>
+                        </div>
+                        <div class="col-md-2 pb-4">
+                            <div class="card">
+                                <img src="/assets/images/grid/baterias-mac.png" class="card-img-top" alt="...">
+                            </div>
+                        </div>
+                        <div class="col-md-2 pb-4">
+                            <div class="card">
+                                <img src="/assets/images/grid/mobil.png" class="card-img-top" alt="...">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-          </div>
-      </div>
-
+        </div>
+    </section>
       <!-- /CARDS -->
 
       <!-- MAPS -->
+    <div class="mapa-franja">
+        <div></div>
+    </div>
+      <div id="map"></div>
 
       <!-- /MAPS -->
 
       <!-- CONTACT -->
+
+      <div class="container franja-naranja">
+          <div class="row">
+              <div class="col mt-5" id="contacto" data-offset="0">
+                  <h2 class="text-center">Conversemos...</h2>
+                  <p class="text-center">Por favor ingrese a continuación su mensaje en el siguiente formulario,<br> en un lapso no mayor a 72 horas estaremos respondiendo a su solicitud.</p>
+                </div>
+          </div>
+          <div class="row justify-content-center">
+              <div class="col-md-6 mt-4 mb-5">
+                    <form action="php/contact.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Pepito Pérez" required>
+                            <div class="invalid-feedback">
+                                Por favor ingrese su nombre
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@gmail.com" required>
+                        <div class="invalid-feedback">
+                            Por favor ingrese un correo electrónico válido
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="text" class="form-control" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                        <label for="msg">Su Mensaje</label>
+                        <textarea class="form-control" id="msg" name="msg" rows="3" required></textarea>
+                        <div class="invalid-feedback">
+                            Por favor ingrese un mensaje
+                        </div>
+                        </div>
+                        <button type="submit" class="btn btn-secondary mb-2">Enviar Mensaje</button>
+                    </form>
+
+              </div>
+          </div>
+      </div>
+
 
       <!-- /CONTACT -->
 
@@ -138,7 +267,7 @@
             <div class="row pt-3 pb-3 footer__menu">
                 <div class="offset-lg-1"></div>
                 <div class="col-12 col-lg">
-                    <a href="http://" target="_blank" rel="noopener noreferrer">Control Flota</a>
+                    <a href="https://zencillo.net/ZS_CO_ClienteConsolidador?Compania=900713" target="_blank" rel="noopener noreferrer">Control Flota</a>
                 </div>
                 <div class="col-12 col-lg">
                     <a href="http://" target="_blank" rel="noopener noreferrer">Pago en línea</a>
@@ -154,17 +283,17 @@
         </div>
         <div class="footer__alt">
             <div class="container">
-                <div class="row pt-2">
-                    <div class="col-lg-5 col-sm-12 pt-2">
-                        <p>AutoPRO © Todos los derechos reservados.</p>
+                <div class="row pt-2 justify-content-sm-center">
+                    <div class="col-12 col-lg-5 pt-2">
+                        <p class="text-center">AutoPRO © Todos los derechos reservados.</p>
                     </div>
-                    <div class="col-lg col-sm-12 ">
+                    <div class="col-12 col-lg-3">
                         <div class="footer__logo">
                             <figure></figure>
                         </div>
                     </div>
-                    <div class="col-lg col-sm-12  pt-2">
-                        <p><a href="https://www.colmultimedia.com">Desarrollo por <strong>Colmultimedia</strong></a></p>
+                    <div class="col-12 col-lg-4  pt-2">
+                        <p class="text-center"><a href="https://www.colmultimedia.com">Desarrollo por <strong>Colmultimedia</strong></a></p>
                     </div>
                 </div>
             </div>
@@ -176,5 +305,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+    <script src="/js/main.js"></script>
+</body>
 </html>

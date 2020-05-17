@@ -14,15 +14,24 @@
         text-align: center;
     }
     &__logo {
+        width: 285px;
+        padding-top: .3em;
         & figure {
-        width: 150px;
-        height: 2.4em;
+        width: 285px;
+        height: 1.5em;
         margin: 0;
-        background: url('/assets/images/logo-autopro.png');
-        background-repeat: no-repeat;
+        background: url('/assets/images/logo-autopro.png') no-repeat center;
         background-size: contain;
-        background-position: center;
         }
     }
 
+}
+
+@media (max-width: 600px) {
+    .footer__logo{
+        padding-top: 0;
+        & figure {
+            margin-left: 1.2em;
+        }
+    }
 }
