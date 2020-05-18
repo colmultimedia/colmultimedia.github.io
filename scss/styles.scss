@@ -12,7 +12,14 @@
 @import "layout/header";
 @import "layout/descargas";
 
+// main {
+//     padding-top:60px;
+// }
 
+html {
+    scroll-behavior: smooth;
+  }
+  
 .btn-outline-primary,
 .list-group-item.active{
     background: $color-brand;
