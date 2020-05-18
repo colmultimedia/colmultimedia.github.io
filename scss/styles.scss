@@ -12,6 +12,7 @@
 @import "layout/header";
 @import "layout/descargas";
 
+
 .btn-outline-primary,
 .list-group-item.active{
     background: $color-brand;
@@ -21,7 +22,6 @@
         background: $color-darkgray;
     }
 }
-
 
 #map {
     height: 60%;
