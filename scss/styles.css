@@ -209,11 +209,8 @@ html {
 }
 
 #map {
-  height: 60%;
-  border-bottom: 5px solid #fe9718;
+  height: 100%;
 }
-
-/* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;
   margin: 0;
